@@ -12,6 +12,7 @@ function Pizzas() {
           id={pizza.id}
           ingredients={pizza.ingredients}
           price={pizza.price}
+          picture={pizza.picture}
         />
       ))}
     </div>

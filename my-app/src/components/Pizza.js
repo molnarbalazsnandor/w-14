@@ -14,7 +14,11 @@ function Pizza({ id, name, picture, ingredients, price }) {
       <img
         onClick={() => setIsFavorite(!isFavorite)}
         /* eredetileg true volt, de így mindig az isFavorite ellentétére vált */
-        src="https://as1.ftcdn.net/v2/jpg/01/09/84/42/1000_F_109844239_A7MdQSDf4y1H80cfvHZuSa0zKBkZ68S7.jpg"
+        src={
+          isFavorite
+            ? "https://as1.ftcdn.net/v2/jpg/01/09/84/42/1000_F_109844239_A7MdQSDf4y1H80cfvHZuSa0zKBkZ68S7.jpg"
+            : "https://www.iconpacks.net/icons/2/free-favourite-icon-2765-thumb.png"
+        }
         alt="kedvenc"
         className="favorite"
       />
@@ -24,6 +28,7 @@ function Pizza({ id, name, picture, ingredients, price }) {
       <p>összetevők: {ingredients}</p>
       <p>ár: {price}</p>
       <p>{isFavorite ? "Kedvenc" : "Nem kedvenc"}</p>
+      <img src={"pictures/" + picture} alt={picture} />
     </div>
   );
 }
