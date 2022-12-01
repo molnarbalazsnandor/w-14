@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Pizza.css";
 
 function Pizza({ id, name, picture, ingredients, price }) {
@@ -7,6 +7,13 @@ function Pizza({ id, name, picture, ingredients, price }) {
   destructuring alternatívák, ha a props-ban az van, hogy pizzaData */
 
   const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(
+    function () {
+      console.log(isFavorite);
+    },
+    [isFavorite]
+  );
 
   return (
     <div className={"pizza" + (isFavorite ? " fav" : "")}>
